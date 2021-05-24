@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+datasource:
+  url: jdbc:postgresql://localhost:5432/postgres
+  username: postgres
+  password: postgres
+  validationQuery: SELECT 1
+  initialSize: 1
+  maxActive: 3
+  testWhileIdle: true
+  testOnBorrow: true
+
+jpa:
+  show-sql: true
+  format_sql: true
+  properties:
+    org:
+      hibernate:
+        flushMode: AUTO
+        entity_dirtiness_strategy: com.navdeventerprise.nevdev.data.strategy.EntityDirtinessStrategy
